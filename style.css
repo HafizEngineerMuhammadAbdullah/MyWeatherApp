@@ -1,0 +1,119 @@
+/* Reset Default Space */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* For Body */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop")
+    no-repeat center center/cover;
+}
+
+/* For Container */
+div.container {
+  height: 32rem;
+  width: 22rem;
+  /* perspective: 1200px; */
+}
+/* For Card */
+div.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* For Front & Back Card */
+div.front-card,
+div.back-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+/* For Front Card*/
+div.front-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* For Heading */
+div.front-card > h1 {
+  font-size: 2em;
+  margin-bottom: 1.3rem;
+}
+/* For Search Box */
+div.search-box {
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+.search-box input {
+  flex: 1;
+  /* padding: 11px 14px; */
+  padding : 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.search-box input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.25);
+}
+/* For Input Box */
+/* .search-box input {
+  flex: 1 1 250px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 0.8em;
+  transition: all 0.3s;
+}
+/* When Focus on Input */
+/* .search-box input:focus {
+  outline: 2px solid #00c6ff;
+  outline-offset: 0px;
+} */
+/* .search-box input:hover {
+  transform:translateY(-2px);
+} */
+/* For Search Button */
+div.search-box button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #00c6ff;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+/* Hover on Search Button */
+.search-box button:hover {
+  background: #0094cc;
+  transform: scale(1.1);
+}
+/* For Back Card */
+div.back-card {
+  /* display: none; */
+  visibility: hidden;
+}
