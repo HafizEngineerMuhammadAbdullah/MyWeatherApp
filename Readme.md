@@ -7,7 +7,7 @@ A clean, glassmorphism-styled weather app that lets users search for real-time w
 ## 📸 Preview
 
 > A frosted-glass card sits centered on a scenic nature background. Users type a city name, hit Search, and the card flips to reveal live weather data.
-
+[Weather-App][./assets/image.png]
 ---
 
 ## 🚀 Features
