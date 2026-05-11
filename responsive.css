@@ -1,0 +1,57 @@
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablet — 480px to 768px */
+@media (max-width: 768px) {
+  div.container {
+    height: 28rem;
+    width: 22rem;
+  }
+}
+
+/* Mobile — below 480px */
+@media (max-width: 480px) {
+  div.container {
+    width: 92vw;       /* fills most of the screen */
+    height: auto;      /* grows with content */
+    min-height: 16rem;
+  }
+
+  div.front-card,
+  div.back-card {
+    position: relative; /* stacks instead of overlapping */
+    padding: 24px 20px;
+  }
+
+  div.card {
+    position: static;  /* remove absolute stacking on mobile */
+  }
+
+  div.front-card > h1 {
+    font-size: 1.5em;  /* slightly smaller heading */
+  }
+
+  div.search-box {
+    flex-direction: column; /* stack input & button vertically */
+    gap: 10px;
+  }
+
+  .inp-icon-wrap {
+    width: 100%;
+  }
+
+  div.search-box button {
+    width: 100%;        /* full-width button on mobile */
+    padding: 12px;
+  }
+}
+
+/* Very small screens — below 360px */
+@media (max-width: 360px) {
+  div.container {
+    width: 96vw;
+  }
+
+  div.front-card > h1 {
+    font-size: 1.3em;
+  }
+}

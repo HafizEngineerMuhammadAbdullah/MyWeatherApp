@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Weather Api Project</title>
+    <!-- For Styling -->
     <link rel="stylesheet" href="./style.css" type="text/css" />
+     <!-- For Responsiveness -->
+      <link rel="stylesheet" href="./responsive.css">
+    <!-- Link CDN FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
 
 <body>
@@ -16,10 +21,12 @@
             <div class="front-card">
                 <h1>Weather Finder</h1>
                 <!-- Search Box -->
-                <div class="search-box inp-icon-wrap">
-                    <i class="ti ti-map-pin"></i>
-                    <input type="text" placeholder="Enter Your City...">
-                    <button>Search</button>
+                <div class="search-box">
+                    <div class="inp-icon-wrap">
+                        <i class="ti ti-map-pin"></i>
+                        <input type="text" placeholder="Enter Your City...">
+                    </div>
+                    <button onclick="getWeather();">Search</button>
                 </div>
             </div>
             <div class="back-card">
