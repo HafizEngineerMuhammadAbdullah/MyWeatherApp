@@ -7,8 +7,8 @@ A clean, glassmorphism-styled weather app that lets users search for real-time w
 ## 📸 Preview
 
 > A frosted-glass card sits centered on a scenic nature background. Users type a city name, hit Search, and the card flips to reveal live weather data.
-[Weather-App][./assets/image.png]
----
+
+## ![Weather App](./assets/image.png)
 
 ## 🚀 Features
 
@@ -23,12 +23,12 @@ A clean, glassmorphism-styled weather app that lets users search for real-time w
 
 ## 🛠️ Tech Stack
 
-| Technology | Usage |
-|---|---|
-| HTML5 | Structure & markup |
-| CSS3 | Glassmorphism styling, animations, transitions |
-| JavaScript (ES6+) | API calls, DOM manipulation |
-| OpenWeatherMap API | Live weather data |
+| Technology        | Usage                                          |
+| ----------------- | ---------------------------------------------- |
+| HTML5             | Structure & markup                             |
+| CSS3              | Glassmorphism styling, animations, transitions |
+| JavaScript (ES6+) | API calls, DOM manipulation                    |
+| WeatherAPI        | Live weather data                              |
 
 ---
 
@@ -50,13 +50,13 @@ weather-finder/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/HafizEngineerMuhammadAbdullah/MyWeatherApp
+git clone https://github.com/HafizEngineerMuhammadAbdullah/MyWeatherApp.git
 cd weather-finder
 ```
 
 ### 2. Get a free API key
 
-1. Go to [https://openweathermap.org/api](https://openweathermap.org/api)
+1. Go to [https://www.weatherapi.com](https://www.weatherapi.com)
 2. Sign up for a free account
 3. Copy your API key from the dashboard
 
@@ -84,18 +84,18 @@ open index.html
 This project uses the **OpenWeatherMap Current Weather API**:
 
 ```
-GET https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric
+GET https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}
 ```
 
 **Key response fields used:**
 
-| Field | Description |
-|---|---|
-| `main.temp` | Temperature in °C |
-| `main.humidity` | Humidity percentage |
-| `weather[0].description` | Weather condition text |
-| `wind.speed` | Wind speed in m/s |
-| `weather[0].icon` | Weather icon code |
+| Field                    | Description            |
+| ------------------------ | ---------------------- |
+| `current.temp_c`         | Temperature in °C      |
+| `current.humidity`       | Humidity percentage    |
+| `current.condition.text` | Weather condition text |
+| `current.wind_kph`       | Wind speed in km/h     |
+| `current.condition.icon` | Weather icon URL       |
 
 ---
 
@@ -114,7 +114,6 @@ GET https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&uni
 - [ ] Show error message for invalid city names
 - [ ] Add °C / °F toggle
 - [ ] Add 5-day forecast view
-- [ ] Make fully mobile responsive
 
 ---
 
@@ -127,5 +126,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🙌 Acknowledgements
 
 - Background photo by [Luca Bravo](https://unsplash.com/@lucabravo) on [Unsplash](https://unsplash.com)
-- Weather data by [OpenWeatherMap](https://openweathermap.org)
+- Weather data by [WeatherAPI](https://www.weatherapi.com)
 - Icons by [Tabler Icons](https://tabler-icons.io)
