@@ -7,33 +7,131 @@
     <title>My Weather Api Project</title>
     <!-- For Styling -->
     <link rel="stylesheet" href="./style.css" type="text/css" />
-     <!-- For Responsiveness -->
-      <link rel="stylesheet" href="./responsive.css">
+    <!-- For Responsiveness -->
+    <link rel="stylesheet" href="./responsive.css">
     <!-- Link CDN FontAwesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <!-- Outfit Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- Roboto Slab -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- DM Serif Display Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- Link Sweet Alert CDN File -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <!-- Container -->
     <div class="container">
-        <!-- CARD -->
-        <div class="card">
-            <!-- Front Card -->
-            <div class="front-card">
-                <h1>Weather Finder</h1>
-                <!-- Search Box -->
-                <div class="search-box">
-                    <div class="inp-icon-wrap">
-                        <i class="ti ti-map-pin"></i>
-                        <input type="text" placeholder="Enter Your City...">
-                    </div>
-                    <button onclick="getWeather();">Search</button>
+        <!-- BACK CARD -->
+        <div class="back-card hidden">
+            <!-- For Weather Icon -->
+            <div class="weather-icon">
+                <img id="weather-icon" src="" alt="🌡☀️" />
+            </div>
+
+
+            <!-- For Temperature -->
+            <div class="temperature">
+                <p id="temp_c">38</p>
+                <p id="centigrade">°C</p>
+            </div>
+
+            <!-- Temperature Progress Bar-->
+            <div class="temp-bar-wrap">
+                <span class="bar-min">-20°C</span>
+                <div class="bar-track">
+                    <div class="bar-fill" id="tempBar"></div>
+                </div>
+                <span class="bar-max">50°C</span>
+            </div>
+            <!-- For City -->
+            <div class="city">
+                <div class="location-icon">
+                    <i class="ti ti-map-pin"></i>
+                </div>
+                <div class="city-country">
+                    <p id="city-name">Karachi</p>
+                    <p>,</p>
+                    <p id="country">PK</p>
                 </div>
             </div>
-            <div class="back-card">
-
+            <!-- For Weather Condition -->
+            <div class="condition-text">
+                <p id="conditionText">Sunny</p>
+            </div>
+            <!-- For Weather Section -->
+            <div class="weather-details">
+                <!-- Humidity Section -->
+                <div id="humidity-info">
+                    <p class="icon">💧</p>
+                    <h3 id="humidity">65%</h3>
+                    <p class="info">HUMIDITY</p>
+                </div>
+                <!-- Wind Section -->
+                <div id="wind-info">
+                    <p class="icon">💨</p>
+                    <h3 id="wind">10 km/h</h3>
+                    <p class="info">WIND</p>
+                </div>
+                <!-- Weather info  -->
+                <div id="weather-info">
+                    <p class="icon">🌡️</p>
+                    <h3 id="feelslike_c">34°C</h3>
+                    <p class="info">FEELS LIKE</p>
+                </div>
+            </div>
+            <!-- Weather Days Section -->
+            <div class="weather-days-section">
+                <div class="weather-day1">
+                    <p id="day1" class="day">Wed</p>
+                    <img class="icon" id="icon1" src="" alt="☀️">
+                    <p id="avgtemp_c1" class="temp">26°</p>
+                </div>
+                <div class="weather-day2">
+                    <p id="day2" class="day">THU</p>
+                    <img class="icon" id="icon2" src="" alt="🌧️">
+                    <p id="avgtemp_c2" class="temp">27°</p>
+                </div>
+                <div class="weather-day3">
+                    <p id="day3" class="day">FRI</p>
+                    <img class="icon" id="icon3" src="" alt="☀️">
+                    <p id="avgtemp_c3" class="temp">30°</p>
+                </div>
+                <div class="weather-day4">
+                    <p id="day4" class="day">SAT</p>
+                    <img class="icon" id="icon4" src="./" alt="☀️">
+                    <p id="avgtemp_c4" class="temp">34°</p>
+                </div>
+            </div>
+        </div>
+        <!-- Front Card -->
+        <div class="front-card">
+            <h1>Sky Weather</h1>
+            <!-- Search Box -->
+            <div class="search-box">
+                <div class="inp-icon-wrap">
+                    <i class="ti ti-map-pin"></i>
+                    <input type="text" placeholder="Enter Your City...">
+                </div>
+                <button onclick="getWeather();">Search</button>
             </div>
         </div>
     </div>
+    <script src="./countrycode.js"></script>
     <script src="./core.js"></script>
 </body>
 

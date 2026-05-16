@@ -1,0 +1,26 @@
+const countryMap = {
+  "Afghanistan": "AF", "Albania": "AL", "Algeria": "DZ",
+  "Argentina": "AR", "Australia": "AU", "Austria": "AT",
+  "Bangladesh": "BD", "Belgium": "BE", "Brazil": "BR",
+  "Canada": "CA", "Chile": "CL", "China": "CN",
+  "Colombia": "CO", "Croatia": "HR", "Czech Republic": "CZ",
+  "Denmark": "DK", "Egypt": "EG", "Ethiopia": "ET",
+  "Finland": "FI", "France": "FR", "Germany": "DE",
+  "Ghana": "GH", "Greece": "GR", "Hungary": "HU",
+  "India": "IN", "Indonesia": "ID", "Iran": "IR",
+  "Iraq": "IQ", "Ireland": "IE", "Israel": "IL",
+  "Italy": "IT", "Japan": "JP", "Jordan": "JO",
+  "Kenya": "KE", "Malaysia": "MY", "Mexico": "MX",
+  "Morocco": "MA", "Netherlands": "NL", "New Zealand": "NZ",
+  "Nigeria": "NG", "Norway": "NO", "Pakistan": "PK",  // ← yours
+  "Peru": "PE", "Philippines": "PH", "Poland": "PL",
+  "Portugal": "PT", "Romania": "RO", "Russia": "RU",
+  "Saudi Arabia": "SA", "Serbia": "RS", "Singapore": "SG",
+  "South Africa": "ZA", "South Korea": "KR", "Spain": "ES",
+  "Sri Lanka": "LK", "Sweden": "SE", "Switzerland": "CH",
+  "Syria": "SY", "Taiwan": "TW", "Thailand": "TH",
+  "Turkey": "TR", "Ukraine": "UA", "United Arab Emirates": "AE",
+  "United Kingdom": "GB", "United States of America": "US",
+  "United States": "US", "Venezuela": "VE", "Vietnam": "VN",
+  "Yemen": "YE", "Zimbabwe": "ZW"
+};

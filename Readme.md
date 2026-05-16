@@ -1,130 +1,260 @@
-# 🌤️ Weather Finder
+# 🌤️ Sky Weather — Modern Weather Dashboard
 
-A clean, glassmorphism-styled weather app that lets users search for real-time weather data by city name. Built with vanilla HTML, CSS, and JavaScript.
+A sleek and responsive weather dashboard built using **HTML, CSS, and Vanilla JavaScript** that provides real-time weather information and a 4-day forecast using the **WeatherAPI** service.
+
+Designed with a modern **glassmorphism UI**, animated transitions, dynamic temperature visualization, and responsive layout support.
 
 ---
 
 ## 📸 Preview
 
-> A frosted-glass card sits centered on a scenic nature background. Users type a city name, hit Search, and the card flips to reveal live weather data.
+![Sky Weather Preview](./assets/image1.png)
 
-## ![Weather App](./assets/image.png)
+---
 
-## 🚀 Features
+## ✨ Features
 
-- 🔍 Search weather by city name
-- 🌡️ Displays temperature, humidity, wind speed & weather condition
-- 💎 Glassmorphism UI with smooth animations
-- 📱 Responsive design
-- ✨ Glowing focus effects on input
-- 🔄 Flip card transition between search and results
+* 🔍 Search weather by city name
+* 🌡️ Real-time temperature display
+* 📅 4-day weather forecast
+* 💧 Humidity information
+* 💨 Wind speed tracking
+* 🌡️ “Feels Like” temperature
+* 📊 Animated temperature progress bar
+* 🪟 Modern glassmorphism interface
+* 🎞️ Smooth card reveal animation
+* 📱 Responsive design for smaller screens
+* 🌍 Country abbreviation support
+* ⚠️ Beautiful alerts using SweetAlert2
+* 🖼️ Dynamic weather icons from API
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology        | Usage                                          |
-| ----------------- | ---------------------------------------------- |
-| HTML5             | Structure & markup                             |
-| CSS3              | Glassmorphism styling, animations, transitions |
-| JavaScript (ES6+) | API calls, DOM manipulation                    |
-| WeatherAPI        | Live weather data                              |
+| Technology        | Purpose                              |
+| ----------------- | ------------------------------------ |
+| HTML5             | Structure & layout                   |
+| CSS3              | Styling, animations & responsiveness |
+| JavaScript (ES6+) | API calls & DOM manipulation         |
+| WeatherAPI        | Live weather & forecast data         |
+| SweetAlert2       | Stylish popup alerts                 |
+| Tabler Icons      | UI icons                             |
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
-weather-finder/
+```bash
+SkyWeather/
 │
-├── index.html       # Main HTML file
-├── style.css        # All styling (glassmorphism, animations)
-├── core.js          # JavaScript logic & API calls
-└── README.md        # Project documentation
+├── index.html          # Main HTML structure
+├── style.css           # Main styling file
+├── responsive.css      # Responsive media queries
+├── core.js             # Main JavaScript logic
+├── countrycode.js      # Country abbreviation mapping
+│
+├── assets/
+│   ├── snow.png
+│   └── image.png
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Setup & Usage
+# ⚙️ Installation & Setup
 
-### 1. Clone the repository
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/HafizEngineerMuhammadAbdullah/MyWeatherApp.git
-cd weather-finder
 ```
 
-### 2. Get a free API key
-
-1. Go to [https://www.weatherapi.com](https://www.weatherapi.com)
-2. Sign up for a free account
-3. Copy your API key from the dashboard
-
-### 3. Add your API key
-
-Open `core.js` and replace the placeholder:
-
-```js
-const API_KEY = "your_api_key_here";
-```
-
-### 4. Run the project
-
-Just open `index.html` in your browser — no build tools or server needed!
+Move into the project folder:
 
 ```bash
-open index.html
-# or simply double-click the file
+cd MyWeatherApp
 ```
 
 ---
 
-## 🌐 API Reference
+## 2️⃣ Get Your Free API Key
 
-This project uses the **OpenWeatherMap Current Weather API**:
+Visit:
 
+[WeatherAPI](https://www.weatherapi.com?utm_source=chatgpt.com)
+
+* Create a free account
+* Generate your API key
+* Copy the key
+
+---
+
+## 3️⃣ Add Your API Key
+
+Open `core.js`
+
+Replace:
+
+```js
+const apiKey = "your_api_key_here";
 ```
-GET https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}
+
+with your real API key.
+
+---
+
+## 4️⃣ Run the Project
+
+Simply open:
+
+```bash
+index.html
 ```
 
-**Key response fields used:**
+in your browser.
 
-| Field                    | Description            |
-| ------------------------ | ---------------------- |
-| `current.temp_c`         | Temperature in °C      |
-| `current.humidity`       | Humidity percentage    |
-| `current.condition.text` | Weather condition text |
-| `current.wind_kph`       | Wind speed in km/h     |
-| `current.condition.icon` | Weather icon URL       |
+No frameworks, build tools, or server setup required.
 
 ---
 
-## 🎨 CSS Highlights
+# 🌐 API Endpoint Used
 
-- **Glassmorphism card** — `backdrop-filter: blur(10px)` with semi-transparent background
-- **Glowing input focus** — `box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.25)`
-- **Flip card effect** — CSS `transform-style: preserve-3d` + `rotateY(180deg)`
-- **Background** — Full-viewport nature image from Unsplash
+```bash
+GET https://api.weatherapi.com/v1/forecast.json
+```
 
----
+### Query Parameters
 
-## 🐛 Known Issues / Improvements
-
-- [ ] Add loading spinner during API fetch
-- [ ] Show error message for invalid city names
-- [ ] Add °C / °F toggle
-- [ ] Add 5-day forecast view
+| Parameter | Description             |
+| --------- | ----------------------- |
+| key       | Your WeatherAPI key     |
+| q         | City name               |
+| days      | Number of forecast days |
 
 ---
 
-## 📄 License
+# 📦 Weather Data Used
 
-This project is open source and available under the [MIT License](LICENSE).
+| Field                  | Description            |
+| ---------------------- | ---------------------- |
+| current.temp_c         | Current temperature    |
+| current.humidity       | Humidity percentage    |
+| current.wind_kph       | Wind speed             |
+| current.feelslike_c    | Feels-like temperature |
+| current.condition.text | Weather condition      |
+| current.condition.icon | Weather icon           |
+| forecast.forecastday   | Multi-day forecast     |
 
 ---
 
-## 🙌 Acknowledgements
+# 🎨 UI & CSS Highlights
 
-- Background photo by [Luca Bravo](https://unsplash.com/@lucabravo) on [Unsplash](https://unsplash.com)
-- Weather data by [WeatherAPI](https://www.weatherapi.com)
-- Icons by [Tabler Icons](https://tabler-icons.io)
+## ✨ Glassmorphism Design
+
+```css
+background: rgba(255,255,255,0.12);
+backdrop-filter: blur(10px);
+```
+
+Creates the frosted-glass modern dashboard effect.
+
+---
+
+## 📊 Dynamic Temperature Bar
+
+Temperature values are converted into percentages and animated smoothly.
+
+```js
+const percent = ((temp - min) / (max - min)) * 100;
+```
+
+---
+
+## 🎞️ Slide-In Animation
+
+```css
+@keyframes slide-in
+```
+
+Used to smoothly reveal the weather dashboard after successful API fetch.
+
+---
+
+## 🔥 Interactive Hover Effects
+
+Weather cards slightly lift upward on hover for a modern UI feel.
+
+```css
+transform: translateY(-3px);
+```
+
+---
+
+# 🧠 JavaScript Concepts Used
+
+This project demonstrates practical usage of:
+
+* Async/Await
+* Fetch API
+* DOM Manipulation
+* Event Handling
+* Array Iteration (`forEach`)
+* Template Literals
+* Functions
+* Object Access
+* Conditional Logic
+* Dynamic Styling
+* Error Handling with `try...catch`
+
+---
+
+# 📱 Responsive Design
+
+The project includes a separate `responsive.css` file for handling smaller screen sizes and improving mobile usability.
+
+---
+
+# 🐛 Future Improvements
+
+* [ ] Add dark/light mode toggle
+* [ ] Add Celsius ↔ Fahrenheit switch
+* [ ] Add weather search history
+* [ ] Add sunrise & sunset timing
+* [ ] Add geolocation support
+* [ ] Add loading spinner
+* [ ] Add hourly forecast
+* [ ] Add weather background auto-change
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 🙌 Credits
+
+* Weather Data by [WeatherAPI](https://www.weatherapi.com?utm_source=chatgpt.com)
+* Icons by [Tabler Icons](https://tabler-icons.io?utm_source=chatgpt.com)
+* Alerts by [SweetAlert2](https://sweetalert2.github.io?utm_source=chatgpt.com)
+* Fonts by [Google Fonts](https://fonts.google.com?utm_source=chatgpt.com)
+
+---
+
+# 👨‍💻 Author
+
+Created by [Muhammad Abdullah GitHub](https://github.com/HafizEngineerMuhammadAbdullah?utm_source=chatgpt.com)
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🛠️ Improve it
+* 🚀 Share it with others
