@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 /* For Body */
 body {
@@ -21,6 +20,7 @@ body::before {
 }
 /* For Container */
 div.container {
+  position: relative;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -30,6 +30,8 @@ div.container {
 
 /* For Front Card */
 div.front-card {
+  position: relative;
+  z-index: 2;
   height: 32rem;
   width: 22rem;
   display: flex;
@@ -42,16 +44,23 @@ div.front-card {
   padding: 30px;
   color: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease;
+}
+
+/* Hide Front Card(Make it transparent) */
+/* Transparent ≠ Removed */
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* For Heading */
 div.front-card > h1 {
   font-family: "Onest", serif;
-  /* font-family: */
-  /* "DM Serif Display", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   font-size: 2em;
   margin-bottom: 1.3rem;
 }
+
 /* For Search Box */
 div.search-box {
   width: 100%;
@@ -85,9 +94,11 @@ div.search-box {
     border-color 0.3s,
     box-shadow 0.3s;
 }
+/* for input place-holder */
 .search-box input::placeholder {
   color: rgba(255, 255, 255, 0.678);
 }
+/* for input focus */
 .search-box input:focus {
   border-color: #00c6ff;
   box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.25);
@@ -115,6 +126,7 @@ div.search-box {
   width: 100%;
   padding-left: 32px;
 }
+
 /* For Search Button */
 div.search-box button {
   padding: 12px 18px;
@@ -134,10 +146,14 @@ div.search-box button {
 }
 /* For Back Card */
 div.back-card {
+  position: absolute;
+  /*to place it underneath(behind) the front card */
+  z-index: 1;
+  top: 50%;
+  left: 50%;
   height: 32rem;
   width: 22rem;
   flex-direction: column;
-  /* flex-flow: column wrap; */
   justify-content: space-evenly;
   align-items: center;
   background: rgba(255, 255, 255, 0.12);
@@ -146,26 +162,26 @@ div.back-card {
   padding: 35px;
   color: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
 }
 .hidden {
   display: none;
-  opacity: 0;
-  /* transform: translateX(-50px);
-  pointer-events: none; */
 }
 .active {
   display: flex;
-  animation: slide-in 5s ease forwards;
+  animation: slide-in 2s ease forwards;
 }
 
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateX(-60px);
+    /* start slightly left of center */
+    transform: translate(-60%, -50%);
   }
   to {
     opacity: 1;
-    transform: translateX(0px);
+    /* settle exactly at center */
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -174,10 +190,6 @@ div.weather-icon {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-}
-div.weather-icon img {
-  /* width: 4rem;
-  height: 4rem; */
 }
 
 /* For Temperature */

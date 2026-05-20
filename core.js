@@ -3,6 +3,7 @@ const inputBox = document.querySelector("input");
 // API Key
 const apiKey = "8d86be893d2f42a188d131751260905";
 
+// Country Name to Abbreviation Map
 function getCountryCode(name) {
     return countryMap[name] || name; // fallback to full name if not in map
 }
@@ -30,10 +31,8 @@ function setTempBar(temp) {
 const getActivate = () => {
     const backCard = document.querySelector(".back-card");
     backCard.classList.remove("hidden");
-    backCard.classList.remove("active");
-    void backCard.offsetWidth;          // ✅ reset animation
     backCard.classList.add("active");
-    document.querySelector(".front-card").classList.add("hidden");  
+    document.querySelector(".front-card").classList.add("fade-out");
 }
 
 
@@ -105,8 +104,8 @@ const getWeather = async () => {
         document.getElementById("temp_c").innerText =
             Math.round(data.current.temp_c);
 
-        // Call it after you get temp from API:
-        setTempBar(data.current.temp_c);  // e.g. 38°C → 82%
+        // Call it after getting temp from API:
+        setTempBar(data.current.temp_c);  // 38°C → 82%
         // Access City Name
         document.getElementById("city-name").innerText =
             data.location.name;
